@@ -1,9 +1,9 @@
 :root {
-  --bg: #fbfbf9;
-  --text: #1a1a1a;
-  --muted: #6b6b6b;
-  --accent: #a35a00;
-  --rule: #e2e2dd;
+  --bg: #0a0a0a;
+  --text: #a8ff60;
+  --muted: #4a7a4a;
+  --accent: #d6ff9e;
+  --rule: #1e2a1e;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
@@ -37,18 +37,22 @@ p { margin: 0; }
 
 ::selection { background: var(--accent); color: var(--bg); }
 
+:root { color-scheme: dark; }
+
 a {
-  color: inherit;
+  color: var(--accent);
+  font-weight: 600;
   text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: .22em;
-  text-decoration-color: var(--rule);
-  transition: color .15s ease, text-decoration-color .15s ease;
+  text-decoration-thickness: 2px;
+  text-underline-offset: .25em;
+  text-decoration-color: var(--accent);
+  transition: background-color .15s ease, color .15s ease;
 }
-a:hover { text-decoration-color: var(--accent); }
-a:focus-visible {
-  outline: 1px dashed var(--accent);
-  outline-offset: 3px;
+a:hover, a:focus-visible {
+  background: var(--accent);
+  color: var(--bg);
+  text-decoration-color: transparent;
+  outline: none;
 }
 
 /* Header */
