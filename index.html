@@ -5,26 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akech Dau Atem</title>
   <meta name="description" content="Software engineer. BSc Computer Science, JKUAT.">
-  <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="style.css">
-  <script>
-    (function () {
-      var s = localStorage.getItem('theme');
-      if (s === 'dark' || (!s && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-    })();
-  </script>
 </head>
 <body>
   <main>
 
     <header>
       <p class="prompt" aria-hidden="true">~/akechsmith $ whoami</p>
-      <div class="header-top">
-        <h1>Akech Dau Atem</h1>
-        <button id="theme-toggle" type="button" aria-label="Toggle dark mode">☾</button>
-      </div>
+      <h1>Akech Dau Atem</h1>
       <p class="descriptor">Software engineer</p>
       <p class="descriptor"></p>
       <p class="links">
@@ -58,22 +46,5 @@
 
   </main>
 
-  <script>
-    (function () {
-      var t = document.getElementById('theme-toggle');
-      var r = document.documentElement;
-      function dark() { return r.getAttribute('data-theme') === 'dark'; }
-      function sync() {
-        t.textContent = dark() ? '☀' : '☾';
-        t.setAttribute('aria-label', dark() ? 'Switch to light mode' : 'Switch to dark mode');
-      }
-      sync();
-      t.addEventListener('click', function () {
-        if (dark()) { r.removeAttribute('data-theme'); localStorage.setItem('theme', 'light'); }
-        else { r.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark'); }
-        sync();
-      });
-    })();
-  </script>
 </body>
 </html>
